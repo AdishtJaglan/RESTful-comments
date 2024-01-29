@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Comments</title>
+    <link rel="stylesheet" href="/show.css">
+</head>
+
+<body>
+    <h1>The Comment You Searched For!</h1>
+
+    <p>
+        Comment id: <%= comment.id %>
+    </p>
+    <p>
+        <%= comment.comment %> - <b> <%= comment.username %></b>
+    </p>
+
+    <a href="/comments">Back to home page</a>
+    <br>
+    <a href="/comments/<%= comment.id %>/edit">Edit the comment</a>
+    <br>
+
+    <form method="post" action="/comments/<%= comment.id %>?_method=DELETE">
+        <button>DELETE!</button>
+    </form>
+</body>
+
+</html>
